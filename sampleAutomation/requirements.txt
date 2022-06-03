@@ -1,0 +1,13 @@
+black>=22.3.0
+genson==1.2.2
+jsonschema==4.4.0
+pytest==7.1.2
+pytest-bdd==5.0.0
+pytest-html-reporter==0.2.9
+pytest-json==0.4.0
+pytest-readme==1.0.0
+pytest-reporter==0.5.2
+pytest-reporter-html1==0.8.2
+pytest-schema==0.1.1
+requests==2.27.1
+schema==0.7.5

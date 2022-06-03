@@ -1,0 +1,7 @@
+{
+    "python.formatting.provider": "black",
+    "editor.formatOnSave": true,
+    "workbench.settings.editor": "json",
+    "workbench.settings.openDefaultKeybindings": true,
+    "workbench.settings.openDefaultSettings": true
+}

@@ -1,0 +1,18 @@
+{
+    "sourceId": "12345678",
+    "sourceUrl": "http://demo.yospace.com/qa/testassets/asset1.mp4",
+    "poolId": 123456,
+    "transcodingProfileUrl": "http://demo.yospace.com/qa/testassets/profile1.json",
+    "ownerId": "44448888",
+    "ownerName": "yospace02",
+    "type": "AD",
+    "requestDetails": "Potentially big String of Ad retrieval audit trail (timestamp,sourceip,user etc)",
+    "metadata": {
+        "notifySuccessUrl": "http://test.com/success",
+        "notifyFailureUrl": "http://test.com/failure",
+        "convParams.EMSG_TIMED_METADATA_BASE64": "DEF",
+        "convParams.ID3_TIMED_METADATA_BASE64": "ABC",
+        "overrideAnalyticsId": "11223344",
+        "publishToMZU": false
+    }
+}

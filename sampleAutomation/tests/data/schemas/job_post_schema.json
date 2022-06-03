@@ -1,0 +1,75 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "sourceId": {
+            "type": "string"
+        },
+        "sourceUrl": {
+            "type": "string"
+        },
+        "poolId": {
+            "type": [
+                "string",
+                "integer"
+            ]
+        },
+        "transcodingProfileUrl": {
+            "type": "string"
+        },
+        "ownerId": {
+            "type": "string"
+        },
+        "ownerName": {
+            "type": "string"
+        },
+        "type": {
+            "type": "string"
+        },
+        "requestDetails": {
+            "type": "string"
+        },
+        "metadata": {
+            "type": "object",
+            "properties": {
+                "notifySuccessUrl": {
+                    "type": "string"
+                },
+                "notifyFailureUrl": {
+                    "type": "string"
+                },
+                "convParams.EMSG_TIMED_METADATA_BASE64": {
+                    "type": "string"
+                },
+                "convParams.ID3_TIMED_METADATA_BASE64": {
+                    "type": "string"
+                },
+                "overrideAnalyticsId": {
+                    "type": "string"
+                }
+            },
+            "id": {
+                "type": "integer"
+            },
+            "required": [
+                "convParams.EMSG_TIMED_METADATA_BASE64",
+                "convParams.ID3_TIMED_METADATA_BASE64",
+                "notifyFailureUrl",
+                "notifySuccessUrl",
+                "overrideAnalyticsId"
+            ]
+        }
+    },
+    "required": [
+        "id",
+        "metadata",
+        "ownerId",
+        "ownerName",
+        "poolId",
+        "requestDetails",
+        "sourceId",
+        "sourceUrl",
+        "transcodingProfileUrl",
+        "type"
+    ]
+}

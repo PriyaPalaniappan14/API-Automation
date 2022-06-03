@@ -1,0 +1,242 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "assetType": {
+            "type": "string"
+        },
+        "created": {
+            "type": "integer"
+        },
+        "creationId": {
+            "type": "string"
+        },
+        "failureCode": {
+            "type": "null"
+        },
+        "jobDetails": {
+            "type": "string"
+        },
+        "jobLogUrl": {
+            "type": "null"
+        },
+        "analysisOutput": {
+            "type": "object",
+            "properties": {
+                "targetDuration": {
+                    "type": "number"
+                },
+                "renditions": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "format": {
+                                "type": "string"
+                            },
+                            "prefix": {
+                                "type": "string"
+                            },
+                            "tolerance": {
+                                "type": "number"
+                            },
+                            "duration": {
+                                "type": "number"
+                            },
+                            "segments": {
+                                "type": "object",
+                                "properties": {
+                                    "count": {
+                                        "type": "integer"
+                                    },
+                                    "details": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "offset": {
+                                                    "type": "number"
+                                                },
+                                                "length": {
+                                                    "type": "number"
+                                                },
+                                                "metadata": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "type": {
+                                                            "type": "string"
+                                                        },
+                                                        "entries": {
+                                                            "type": "array",
+                                                            "items": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "format": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "timestamp": {
+                                                                        "type": "number"
+                                                                    },
+                                                                    "payload": {
+                                                                        "type": "string"
+                                                                    }
+                                                                },
+                                                                "required": [
+                                                                    "format",
+                                                                    "payload",
+                                                                    "timestamp"
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "entries",
+                                                        "type"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "length",
+                                                "metadata",
+                                                "offset"
+                                            ]
+                                        }
+                                    }
+                                },
+                                "required": [
+                                    "count",
+                                    "details"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "duration",
+                            "format",
+                            "prefix",
+                            "segments",
+                            "tolerance"
+                        ]
+                    }
+                }
+            },
+            "required": [
+                "renditions",
+                "targetDuration"
+            ]
+        },
+        "ingestMessage": {
+            "type": "null"
+        },
+        "ingestState": {
+            "type": "string"
+        },
+        "ownerId": {
+            "type": "string"
+        },
+        "ownerName": {
+            "type": "string"
+        },
+        "poolId": {
+            "type": "integer"
+        },
+        "processorId": {
+            "type": "null"
+        },
+        "requestDetails": {
+            "type": "string"
+        },
+        "sourceId": {
+            "type": "string"
+        },
+        "sourceUrl": {
+            "type": "string"
+        },
+        "storeLocation1": {
+            "type": "string"
+        },
+        "storeLocation2": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "storeLocation3": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "storeLocation4": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "thumbnailUrl": {
+            "type": "string"
+        },
+        "transcodedDate": {
+            "type": "integer"
+        },
+        "transcodingProfileUrl": {
+            "type": "string"
+        },
+        "metadata": {
+            "type": "object",
+            "properties": {
+                "notifySuccessUrl": {
+                    "type": "string"
+                },
+                "notifyFailureUrl": {
+                    "type": "string"
+                },
+                "convParams.EMSG_TIMED_METADATA_BASE64": {
+                    "type": "string"
+                },
+                "convParams.ID3_TIMED_METADATA_BASE64": {
+                    "type": "string"
+                },
+                "overrideAnalyticsId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "convParams.EMSG_TIMED_METADATA_BASE64",
+                "convParams.ID3_TIMED_METADATA_BASE64",
+                "notifyFailureUrl",
+                "notifySuccessUrl",
+                "overrideAnalyticsId"
+            ]
+        }
+    },
+    "required": [
+        "analysisOutput",
+        "assetType",
+        "created",
+        "creationId",
+        "failureCode",
+        "id",
+        "ingestMessage",
+        "ingestState",
+        "jobDetails",
+        "jobLogUrl",
+        "metadata",
+        "ownerId",
+        "ownerName",
+        "poolId",
+        "processorId",
+        "requestDetails",
+        "sourceId",
+        "sourceUrl",
+        "storeLocation1",
+        "storeLocation2",
+        "storeLocation3",
+        "storeLocation4",
+        "thumbnailUrl",
+        "transcodedDate",
+        "transcodingProfileUrl"
+    ]
+}
