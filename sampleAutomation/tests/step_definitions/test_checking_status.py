@@ -1,4 +1,5 @@
 import requests
+import time
 
 from pytest_bdd import scenarios, given, then, parsers
 from helpers.schemaValidation import validate_schema
@@ -14,8 +15,7 @@ scenarios("../../tests/features/GET_checking_status.feature")
 @given("the user makes the GET request", target_fixture="get_response")
 def make_get_request(get_job_id: int) -> requests.Response:
     print("***making GET request***")
-    print(get_job_id)
-    return requests.get(GETURL, str(get_job_id))
+    return requests.get(f"{GETURL}{get_job_id}")
 
 
 @given(parsers.parse("the response status code should return {code:d}"))
@@ -31,10 +31,17 @@ def status_validate(get_response: requests.Response) -> None:
 
 
 @then("the ingest state should be present in response")
-def validate_ingest_state(get_response: requests.Response) -> None:
+def validate_asset_state(get_response: requests.Response, get_job_id: int) -> None:
     print("***ingest status***")
-    ingest_response_status = get_response.json().get("ingestState")
-    assert ingest_response_status == "PUBLISHED"
+    asset_response_status = get_response.json().get("assetState")
+    print(f"*** JOB ID: {get_job_id}")
+    while asset_response_status not in ("PUBLISHED", "FAILED"):
+        print(f"Search Not yet completed,searching again..{asset_response_status}")
+        time.sleep(18)  # 3minute
+        _next_response = make_get_request(get_job_id)
+        asset_response_status = _next_response.json().get("assetState")
+    else:
+        assert asset_response_status == "PUBLISHED"
 
 
 @given("the user validates the analysis data of output")
