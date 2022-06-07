@@ -1,5 +1,4 @@
 Feature: API testing
-    @skip
     Scenario: Making POST request
         Given we have a valid payload
         When the user makes a POST request
